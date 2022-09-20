@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CardListViewController: UITableViewController {
     
@@ -25,6 +26,12 @@ class CardListViewController: UITableViewController {
         cell.promotionLabel.text = "\(creditCardList[indexPath.row].promotionDetail.amount)만원 증정"
         cell.cardNameLabel.text = "\(creditCardList[indexPath.row].name)"
         
+        let imageURL = URL(string: creditCardList[indexPath.row].cardImageURL)
+        cell.cardImageView.kf.setImage(with: imageURL)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
