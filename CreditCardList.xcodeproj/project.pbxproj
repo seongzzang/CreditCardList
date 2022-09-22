@@ -15,6 +15,7 @@
 		695C4C0828C2498B003015B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695C4C0628C2498B003015B4 /* LaunchScreen.storyboard */; };
 		695C4C1028C249A1003015B4 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695C4C0F28C249A1003015B4 /* CardListViewController.swift */; };
 		699B80FF28DCA7D70049DC82 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B80FE28DCA7D70049DC82 /* CardDetailViewController.swift */; };
+		699B810128DCAA720049DC82 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 699B810028DCAA720049DC82 /* money.json */; };
 		69ACE48528CA37E200804CAC /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE48428CA37E200804CAC /* CreditCard.swift */; };
 		69ACE48828CA38A000804CAC /* CardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69ACE48628CA38A000804CAC /* CardListCell.swift */; };
 		69ACE48928CA38A000804CAC /* CardListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69ACE48728CA38A000804CAC /* CardListCell.xib */; };
@@ -31,6 +32,7 @@
 		695C4C0928C2498B003015B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		695C4C0F28C249A1003015B4 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		699B80FE28DCA7D70049DC82 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		699B810028DCAA720049DC82 /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = money.json; path = "../../../../../Downloads/Part 3/Ch2_CreditCardList/money.json"; sourceTree = "<group>"; };
 		69ACE48428CA37E200804CAC /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		69ACE48628CA38A000804CAC /* CardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCell.swift; sourceTree = "<group>"; };
 		69ACE48728CA38A000804CAC /* CardListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardListCell.xib; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		695C4BFA28C24989003015B4 /* CreditCardList */ = {
 			isa = PBXGroup;
 			children = (
+				699B810028DCAA720049DC82 /* money.json */,
 				695C4C0F28C249A1003015B4 /* CardListViewController.swift */,
 				695C4BFB28C24989003015B4 /* AppDelegate.swift */,
 				695C4BFD28C24989003015B4 /* SceneDelegate.swift */,
@@ -165,6 +168,7 @@
 			files = (
 				695C4C0828C2498B003015B4 /* LaunchScreen.storyboard in Resources */,
 				695C4C0528C2498B003015B4 /* Assets.xcassets in Resources */,
+				699B810128DCAA720049DC82 /* money.json in Resources */,
 				695C4C0328C24989003015B4 /* Main.storyboard in Resources */,
 				69ACE48928CA38A000804CAC /* CardListCell.xib in Resources */,
 			);
