@@ -16,7 +16,7 @@ class CardListViewController: UITableViewController {
     var creditCardList : [CreditCard] = []
     
     override func viewDidLoad() {
-        viewDidLoad()
+        super.viewDidLoad()
         
         ref = Database.database().reference()
         ref.observe(.value) {snapshot in
