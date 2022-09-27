@@ -18,6 +18,9 @@ class CardListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let nibName = UINib(nibName: "CardListCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "CardListCell")
+        
         ref = Database.database().reference()
         ref.observe(.value) {snapshot in
             guard let value = snapshot.value as? [String: [String:Any]] else { return }
@@ -36,8 +39,10 @@ class CardListViewController: UITableViewController {
             }
         }
         
-        let nibName = UINib(nibName: "CardListCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "CardListCell")
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return creditCardList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,11 +54,12 @@ class CardListViewController: UITableViewController {
         
         let imageURL = URL(string: creditCardList[indexPath.row].cardImageURL)
         cell.cardImageView.kf.setImage(with: imageURL)
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 200
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
