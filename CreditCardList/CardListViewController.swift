@@ -59,7 +59,7 @@ class CardListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 80
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -69,5 +69,35 @@ class CardListViewController: UITableViewController {
         
         detailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
         self.show(detailViewController,sender: nil)
+        
+        //Option1
+        
+        let cardID = creditCardList[indexPath.row].id
+        ref.child("Item\(cardID)/isSelected").setValue(true)
+        
+        //Option2
+        /*
+        ref.queryOrdered(byChild: "id").queryEqual(toValue: cardID).observe(.value){[weak self] snapshot in
+            guard let self = self,
+                  let value = snapshot.value as? [String:[String:Any]],
+                  let key = value.keys.first else { return }
+            
+            self.ref.child("\(key)/isSelected").setValue(true)
+        }
+         */
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if EditingStyle == .delete {
+            //Option1
+            let cardID = creditCardList[indexPath.row].id
+            ref.child("Item\(cardID)").removeValue()
+            
+            
+        }
     }
 }
