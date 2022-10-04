@@ -91,13 +91,21 @@ class CardListViewController: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if EditingStyle == .delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             //Option1
             let cardID = creditCardList[indexPath.row].id
             ref.child("Item\(cardID)").removeValue()
-            
-            
+            /*
+            ref.queryOrdered(byChild: "id").queryEqual(toValue: cardID).observe { [weak self]
+                snapshot in
+                guard let self = self ,
+                      let value = snapshot.value as? [String : [String : Any]],
+                      let key = value .keys.first else {return}
+                
+                ref. child(key).removeValue()
+            }
+             */
         }
     }
 }
