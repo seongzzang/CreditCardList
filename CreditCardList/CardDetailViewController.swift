@@ -29,6 +29,7 @@ class CardDetailViewController: UIViewController {
         animationView.frame = lottieView.bounds
         animationView.loopMode = .loop
         animationView.play()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
