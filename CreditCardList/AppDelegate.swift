@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,16 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let card9Ref = db.collection("creditCardList").document("card9")
             
             do {
-                try batch.setData(from: CreditCardDummy.card0, forDocument: card0Ref)
-                try batch.setData(from: CreditCardDummy.card1, forDocument: card1Ref)
-                try batch.setData(from: CreditCardDummy.card2, forDocument: card2Ref)
-                try batch.setData(from: CreditCardDummy.card3, forDocument: card3Ref)
-                try batch.setData(from: CreditCardDummy.card4, forDocument: card4Ref)
-                try batch.setData(from: CreditCardDummy.card5, forDocument: card5Ref)
-                try batch.setData(from: CreditCardDummy.card6, forDocument: card6Ref)
-                try batch.setData(from: CreditCardDummy.card7, forDocument: card7Ref)
-                try batch.setData(from: CreditCardDummy.card8, forDocument: card8Ref)
-                try batch.setData(from: CreditCardDummy.card9, forDocument: card9Ref)
+                try batch.setData(CreditCardDummy.card0, forDocument: card0Ref)
+                try batch.setData(CreditCardDummy.card1, forDocument: card1Ref)
+                try batch.setData(CreditCardDummy.card2, forDocument: card2Ref)
+                try batch.setData(CreditCardDummy.card3, forDocument: card3Ref)
+                try batch.setData(CreditCardDummy.card4, forDocument: card4Ref)
+                try batch.setData(CreditCardDummy.card5, forDocument: card5Ref)
+                try batch.setData(CreditCardDummy.card6, forDocument: card6Ref)
+                try batch.setData(CreditCardDummy.card7, forDocument: card7Ref)
+                try batch.setData(CreditCardDummy.card8, forDocument: card8Ref)
+                try batch.setData(CreditCardDummy.card9, forDocument: card9Ref)
             } catch let error {
                 print("ERROR writing card to Firestore \(error.localizedDescription)")
             }
