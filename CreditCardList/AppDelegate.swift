@@ -34,11 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let card8Ref = db.collection("creditCardList").document("card8")
             let card9Ref = db.collection("creditCardList").document("card9")
             
-            let card0 = CreditCardDummy.card0
-            print(card0)
             do {
-                /*
-                try card0Ref.setData(CreditCardDummy.card0)
+                
                 try batch.setData(CreditCardDummy.card0, forDocument: card0Ref)
                 try batch.setData(CreditCardDummy.card1, forDocument: card1Ref)
                 try batch.setData(CreditCardDummy.card2, forDocument: card2Ref)
@@ -49,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 try batch.setData(CreditCardDummy.card7, forDocument: card7Ref)
                 try batch.setData(CreditCardDummy.card8, forDocument: card8Ref)
                 try batch.setData(CreditCardDummy.card9, forDocument: card9Ref)
-                 */
+                 // change data value
             } catch let error {
                 print("ERROR writing card to Firestore \(error.localizedDescription)")
             }
