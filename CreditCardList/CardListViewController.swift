@@ -112,7 +112,6 @@ class CardListViewController: UITableViewController {
         //Firestore 쓰기
         //Option1 - 경로를 아는 경우
         let cardID = creditCardList[indexPath.row].id
-        print("cardID는 \(cardID)번 입니다.")
         db.collection("creditCardList").document("card\(cardID)").updateData(["isSelected":true])
         
         //Option2 - 경로를 모르는 경우
