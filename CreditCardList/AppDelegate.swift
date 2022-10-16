@@ -36,16 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let card9Ref = db.collection("creditCardList").document("card9")
             
             do {
-                try batch.setData(CreditCardDummy.card0, forDocument: card0Ref)
-                try batch.setData(CreditCardDummy.card1, forDocument: card1Ref)
-                try batch.setData(CreditCardDummy.card2, forDocument: card2Ref)
-                try batch.setData(CreditCardDummy.card3, forDocument: card3Ref)
-                try batch.setData(CreditCardDummy.card4, forDocument: card4Ref)
-                try batch.setData(CreditCardDummy.card5, forDocument: card5Ref)
-                try batch.setData(CreditCardDummy.card6, forDocument: card6Ref)
-                try batch.setData(CreditCardDummy.card7, forDocument: card7Ref)
-                try batch.setData(CreditCardDummy.card8, forDocument: card8Ref)
-                try batch.setData(CreditCardDummy.card9, forDocument: card9Ref)
+                try card0Ref.setData(from: CreditCardDummy.card0)
+                try card1Ref.setData(from: CreditCardDummy.card1)
+                try card2Ref.setData(from: CreditCardDummy.card2)
+                try card3Ref.setData(from: CreditCardDummy.card3)
+                try card4Ref.setData(from: CreditCardDummy.card4)
+                try card5Ref.setData(from: CreditCardDummy.card5)
+                try card6Ref.setData(from: CreditCardDummy.card6)
+                try card7Ref.setData(from: CreditCardDummy.card7)
+                try card8Ref.setData(from: CreditCardDummy.card8)
+                try card9Ref.setData(from: CreditCardDummy.card9)
                  // change data value
             } catch let error {
                 print("ERROR writing card to Firestore \(error.localizedDescription)")
