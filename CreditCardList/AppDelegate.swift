@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let card9Ref = db.collection("creditCardList").document("card9")
             
             do {
-                
                 try batch.setData(CreditCardDummy.card0, forDocument: card0Ref)
                 try batch.setData(CreditCardDummy.card1, forDocument: card1Ref)
                 try batch.setData(CreditCardDummy.card2, forDocument: card2Ref)
