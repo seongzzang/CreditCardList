@@ -96,24 +96,23 @@ class CardListViewController: UITableViewController {
         self.show(detailViewController,sender: nil)
         
         //Option1
-        
 //        let cardID = creditCardList[indexPath.row].id
 //        ref.child("Item\(cardID)/isSelected").setValue(true)
         
         //Option2
-        /*
-        ref.queryOrdered(byChild: "id").queryEqual(toValue: cardID).observe(.value){[weak self] snapshot in
-            guard let self = self,
-                  let value = snapshot.value as? [String:[String:Any]],
-                  let key = value.keys.first else { return }
-            
-            self.ref.child("\(key)/isSelected").setValue(true)
-        }
-         */
+//        ref.queryOrdered(byChild: "id").queryEqual(toValue: cardID).observe(.value){[weak self] snapshot in
+//            guard let self = self,
+//                  let value = snapshot.value as? [String:[String:Any]],
+//                  let key = value.keys.first else { return }
+//
+//            self.ref.child("\(key)/isSelected").setValue(true)
+//        }
+         
         
         //Firestore 쓰기
         //Option1 - 경로를 아는 경우
         let cardID = creditCardList[indexPath.row].id
+        print("cardID는 \(cardID)번 입니다.")
         db.collection("creditCardList").document("card\(cardID)").updateData(["isSelected":true])
         
         //Option2 - 경로를 모르는 경우
