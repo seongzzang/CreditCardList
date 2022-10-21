@@ -22,7 +22,6 @@ class CardListViewController: UITableViewController {
         
         let nibName = UINib(nibName: "CardListCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "CardListCell")
-        
         //실시간 데이터베이스 읽기
 //        ref = Database.database().reference()
 //        ref.observe(.value) {snapshot in
@@ -84,7 +83,7 @@ class CardListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 80.0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
